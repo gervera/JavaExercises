@@ -7,30 +7,33 @@ public class ReverseString {
   
     public static void main(String[] args) {
         String str = "5J%.A3$%b13n-Ks";
-
+        System.out.println("String Inicial: " + str);
+        str = reverseString(str);
+        System.out.println("String Final:   " + str);
+    }
+    
+    public static String reverseString(String string){
+        
         StringBuilder st =  new StringBuilder("");
-        for(int i=0;i<str.length();i++){
-            char caracter = str.toUpperCase().charAt(i);
+        for(int i=0;i<string.length();i++){
+            char caracter = string.toUpperCase().charAt(i);
             if(isLetter(caracter)){
-                st.append(str.charAt(i));
+                st.append(string.charAt(i));
             }
         }
         int letras = st.length()-1;
         String nuevoString = "";
         
-        for(int i=0;i<str.length();i++){
-            char caracter = str.toUpperCase().charAt(i);
+        for(int i=0;i<string.length();i++){
+            char caracter = string.toUpperCase().charAt(i);
             if(isLetter(caracter)){
                 nuevoString=nuevoString + st.charAt(letras);
                 letras--;
             }else{
-                nuevoString= nuevoString + str.charAt(i);
+                nuevoString= nuevoString + string.charAt(i);
             }
         } 
-        System.out.println("Letras: "+ st);
-        System.out.println("String Inicial: " + str);
-        System.out.println("String Final:   " + nuevoString);
-
+        return nuevoString;
     }
     
     public static boolean isLetter(char c){
