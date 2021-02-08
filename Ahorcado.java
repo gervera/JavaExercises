@@ -48,9 +48,9 @@ public class Ahorcado {
         int position;
         for(int i=0;i<palabra.length();i++){
             if(palabra.charAt(i) == letra){
-                System.out.println("La palabra oculta contenia la letra ingresada: " +letra );
+                System.out.println("La palabra oculta contenia la letra: " +letra);
                 palabra.deleteCharAt(i);
-                return palabra;
+                i--;
             }
         }
         return palabra;
